@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="MatrixApp">
+<head>
+    <title>Matrix Multiplication</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-controller="MatrixController">
+    <div class="container">
+        <h1>Matrix Multiplication</h1>
+        <form ng-submit="submit()">
+            <label>
+                Matrix Size (n x n):
+                <input type="number" ng-model="size" min="1" required>
+            </label>
+            <label>
+                Use OpenMP:
+                <input type="checkbox" ng-model="useOpenMP">
+            </label>
+            <button type="submit">Calculate</button>
+        </form>
+        <div ng-if="result">
+            <h3>Result</h3>
+            <p>Execution Time: {{ result.execution_time }} seconds</p>
+        </div>
+        <div ng-if="error" class="error">
+            <p>{{ error }}</p>
+        </div>
+    </div>
+</body>
+</html>
