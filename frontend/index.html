@@ -20,6 +20,12 @@
             </label>
             <button type="submit">Calculate</button>
         </form>
+
+        <!-- Progress Bar -->
+        <div ng-if="loading" class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+
         <div ng-if="result">
             <h3>Result</h3>
             <p>Execution Time: {{ result.execution_time }} seconds</p>
